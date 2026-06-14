@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/create.css') }}">
+
+</head>
+<body>
+    <form action="/lobby" method="POST">
+        <label for="name">Insert Your Name</label>
+        <input type="text" name="name" id="name" required>
+        <input type="hidden" name="create" value="create" >
+        <button type="submit">Create Game</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 40px;
+    color: #222;
+}
+
+p {
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-top: 15px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input[type="radio"] {
+    margin-right: 4px;
+    margin-left: 10px;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2d6cdf;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2457b3;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    max-width: 400px;
+    margin-top: 10px;
+}
+
+ul li {
+    background: white;
+    margin-bottom: 6px;
+    padding: 10px;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+label[for="playerList"] {
+    display: block;
+    margin-top: 25px;
+    font-weight: bold;
+}
