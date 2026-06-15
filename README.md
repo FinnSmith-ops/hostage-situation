@@ -3,20 +3,22 @@
 A real-time multiplayer location-based game built with Flask, Leaflet, and PostgreSQL.
 
 ## Features
-- Multiplayer lobby system with game codes
-- Role selection (Hostage / Searcher)
-- Real-time player location tracking on map
-- Live lobby updates
+- Join or create game lobbies with a code
+- Role selection: Hostage / Searcher
+- Real-time player location tracking on a map
 - Team-based gameplay system
 
 ## Tech Stack
-- Python (Flask)
+- Flask (Python backend)
 - Flask-SQLAlchemy
-- PostgreSQL
-- Leaflet.js (maps)
-- JavaScript (frontend polling + updates)
-- HTML/CSS
+- PostgreSQL (RDS database)
+- Leaflet.js (interactive maps)
+- JavaScript (frontend updates)
 
-## Setup (Local)
+## Run Locally
+pip install -r requirements.txt
+python app.py
 
-### 1. Clone repo
+## Notes
+- Uses session-based player tracking
+- Map updates every few seconds using fetch requests
