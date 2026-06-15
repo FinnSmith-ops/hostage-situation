@@ -1,23 +1,21 @@
 from flask import Flask, render_template, request, session, jsonify, redirect
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import create_engine
+import os
 
 def clear_table(table):
     db.session.query(table).delete()
     db.session.commit()
 app=Flask(__name__)
 
-app.secret_key="penelope"
+app.secret_key = os.environ.get("SECRET_KEY", "dev-secret")
 
-db_host = "my-map-db.c1koo6aek7nd.us-east-2.rds.amazonaws.com" 
-db_name = "postgres"
-db_user = "postgres"
-db_pass = "110Pauldrive!"
-db_port = 5432
 
-DATABASE_URL = f"postgresql+psycopg2://{db_user}:{db_pass}@{db_host}:{db_port}/{db_name}"
+
+DATABASE_URL = os.environ.get("DATABASE_URL")
 
 app.config["SQLALCHEMY_DATABASE_URI"] = DATABASE_URL
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 
@@ -51,9 +49,6 @@ class Player(db.Model):
         self.host = host
 
 
-
-    
-engine = create_engine(DATABASE_URL)
 
 def reset_db():
     
@@ -210,5 +205,5 @@ def testing():
 if __name__ == "__main__":
     with app.app_context():
         db.create_all()
-    app.run(debug=True)
+    app.run()
     
